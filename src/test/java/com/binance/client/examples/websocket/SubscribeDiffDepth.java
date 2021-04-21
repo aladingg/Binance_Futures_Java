@@ -10,8 +10,8 @@ public class SubscribeDiffDepth {
         SubscriptionClient client = SubscriptionClient.create(PrivateConfig.API_KEY, PrivateConfig.SECRET_KEY);
    
         client.subscribeDiffDepthEvent("btcusdt", ((event) -> {
-            System.out.println(event);
-            client.unsubscribeAll();
+            System.out.println("EVENT: " + event);
+//            client.unsubscribeAll();
         }), null);
 
     }
