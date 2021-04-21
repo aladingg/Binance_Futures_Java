@@ -158,6 +158,16 @@ public class AccountInformation {
         this.positions = positions;
     }
 
+    public Asset getAsset(String symbol) {
+        for (Asset asset : assets) {
+            if (asset.getAsset().equals(symbol)) {
+                return asset;
+            }
+        }
+
+        return null;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE).append("canDeposit", canDeposit)
